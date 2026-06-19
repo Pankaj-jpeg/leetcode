@@ -3,7 +3,7 @@
 // Difficulty : Easy
 // Link       : https://leetcode.com/problems/vowel-consonant-score/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: simple iteration | Time: O(n) | Space: O(1))
+// Approach: simple iteration, checking each character | Time: O(n) | Space: O(1))
 // Time       : 
 // Space      : 
 // Runtime    : 1 ms  |  Memory: 9.1 MB
