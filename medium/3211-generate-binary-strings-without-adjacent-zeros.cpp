@@ -3,7 +3,7 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/generate-binary-strings-without-adjacent-zeros/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: depth-first search with backtracking | Time: O(2^n) | Space: O(n)
+// Approach: depth-first search | Time: O(2^n) | Space: O(n)
 // Time       : 
 // Space      : 
 // Runtime    : 4 ms  |  Memory: 22.7 MB
