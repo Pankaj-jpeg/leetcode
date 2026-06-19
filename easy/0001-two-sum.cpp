@@ -3,7 +3,7 @@
 // Difficulty : Easy
 // Link       : https://leetcode.com/problems/two-sum/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: hash table, store numbers as keys and indices as values | Time: O(n) | Space: O(n)
+// Approach: hash table, store numbers and their indices | Time: O(n) | Space: O(n)
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 14.9 MB
