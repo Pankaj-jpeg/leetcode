@@ -3,7 +3,7 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/rearrange-array-elements-by-sign/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: two-pointer technique, alternating positive and negative numbers | Time: O(n) | Space: O(n)
+// Approach: two-pointer technique | Time: O(n) | Space: O(n)
 // Time       : 
 // Space      : 
 // Runtime    : 12 ms  |  Memory: 128.3 MB
