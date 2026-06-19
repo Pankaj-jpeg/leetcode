@@ -3,7 +3,7 @@
 // Difficulty : Easy
 // Link       : https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: two-pointer technique, increment right on unique, increment left on duplicate | Time: O(n) | Space: O(1)
+// Approach: two-pointer technique, increment right on unique | Time: O(n) | Space: O(1)
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 22.6 MB
