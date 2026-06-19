@@ -3,7 +3,7 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/set-matrix-zeroes/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 
+// Approach: two passes, first to mark zeros and second to set zeros | Time: O(m*n) | Space: O(1)
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 20.6 MB
