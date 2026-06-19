@@ -3,7 +3,7 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: binary search, finding the minimum capacity | Time: O(n) | Space: O(n)
+// Approach: binary search | Time: O(n) | Space: O(n)
 // Time       : 
 // Space      : 
 // Runtime    : 11 ms  |  Memory: 35 MB
