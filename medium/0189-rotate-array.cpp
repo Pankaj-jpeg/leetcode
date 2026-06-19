@@ -1,0 +1,22 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 189. Rotate Array
+// Difficulty : Medium
+// Link       : https://leetcode.com/problems/rotate-array/
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Approach: three reversals | Time: O(n) | Space: O(1)
+// Time       : 
+// Space      : 
+// Runtime    : 0 ms  |  Memory: 29.6 MB
+// Date       : 2026-01-19
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class Solution {
+public:
+    void rotate(vector<int>& nums, int k) {
+        int temp;int n = nums.size();
+        k = k % n;
+        std::reverse(nums.begin() , nums.begin()+(n-k));
+        std::reverse(nums.begin() + (n-k) , nums.end());
+        std::reverse(nums.begin() , nums.end());
+    }
+};
