@@ -3,7 +3,7 @@
 // Difficulty : Easy
 // Link       : https://leetcode.com/problems/remove-outermost-parentheses/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: two-pointer approach with flag management | Time: O(n) | Space: O(n)
+// Approach: two-pointer, tracking parentheses count | Time: O(n) | Space: O(n)
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 8.9 MB
