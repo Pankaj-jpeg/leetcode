@@ -3,7 +3,7 @@
 // Difficulty : Hard
 // Link       : https://leetcode.com/problems/reverse-nodes-in-k-group/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: reversing linked list in k-sized chunks | Time: O(n) | Space: O(1)
+// Approach: reversing linked list in chunks of size k | Time: O(n) | Space: O(1)
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 16.4 MB
