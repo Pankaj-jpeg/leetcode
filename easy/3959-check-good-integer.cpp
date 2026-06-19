@@ -3,7 +3,7 @@
 // Difficulty : Easy
 // Link       : https://leetcode.com/problems/check-good-integer/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: single pass through the digits of the input number | Time: O(log(n)) | Space: O(1)
+// Approach: calculate the sum of digits and the sum of squares of digits | Time: O(log(n)) | Space: O(1)
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 7.7 MB
