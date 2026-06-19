@@ -3,7 +3,7 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/sort-list/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: merge sort | Time: O(n log n) | Space: O(log n)
+// Approach: merge sort with divide and conquer | Time: O(n log n) | Space: O(log n)
 // Time       : 
 // Space      : 
 // Runtime    : 8 ms  |  Memory: 57.1 MB
