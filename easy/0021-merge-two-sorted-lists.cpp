@@ -3,7 +3,7 @@
 // Difficulty : Easy
 // Link       : https://leetcode.com/problems/merge-two-sorted-lists/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 
+// Approach: iterative, two-pointer technique | Time: O(n + m) | Space: O(1)
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 19.5 MB
