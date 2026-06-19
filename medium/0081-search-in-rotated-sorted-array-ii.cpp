@@ -3,7 +3,7 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: modified binary search with handling of duplicate elements | Time: O(n) | Space: O(1)
+// Approach: binary search with special handling for duplicate elements | Time: O(n) | Space: O(1)
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 18.1 MB
