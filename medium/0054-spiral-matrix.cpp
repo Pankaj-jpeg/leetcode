@@ -3,7 +3,7 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/spiral-matrix/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: spiral traversal | Time: O(m*n) | Space: O(m*n)
+// 
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 9.4 MB
