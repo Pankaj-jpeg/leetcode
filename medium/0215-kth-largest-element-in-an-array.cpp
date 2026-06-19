@@ -3,7 +3,7 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/kth-largest-element-in-an-array/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: using a max heap (priority queue) to maintain the k largest elements | Time: O(n log k) | Space: O(k)
+// Approach: maintaining a max heap of size k | Time: O(n log k) | Space: O(k)
 // Time       : 
 // Space      : 
 // Runtime    : 39 ms  |  Memory: 61.5 MB
