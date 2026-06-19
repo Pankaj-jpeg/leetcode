@@ -3,7 +3,7 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/powx-n/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: recursive exponentiation with memoization | Time: O(log(n)) | Space: O(log(n))
+// Approach: recursive exponentiation | Time: O(log n) | Space: O(log n)
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 8.8 MB
