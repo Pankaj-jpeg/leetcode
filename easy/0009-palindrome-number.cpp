@@ -3,7 +3,7 @@
 // Difficulty : Easy
 // Link       : https://leetcode.com/problems/palindrome-number/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: reverse number | Time: O(log(x)) | Space: O(1)
+// Approach: reversing the number | Time: O(log(x)) | Space: O(1))
 // Time       : 
 // Space      : 
 // Runtime    : 1 ms  |  Memory: 8.5 MB
