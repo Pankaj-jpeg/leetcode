@@ -3,7 +3,7 @@
 // Difficulty : Easy
 // Link       : https://leetcode.com/problems/largest-odd-number-in-string/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: single pass, find rightmost odd digit | Time: O(n) | Space: O(n)
+// Approach: single pass, finding rightmost odd digit | Time: O(n) | Space: O(n)
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 17.8 MB
