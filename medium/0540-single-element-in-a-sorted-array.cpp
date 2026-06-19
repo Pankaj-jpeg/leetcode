@@ -3,7 +3,7 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/single-element-in-a-sorted-array/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 
+// Approach: modified binary search | Time: O(log n) | Space: O(1)
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 26.2 MB
