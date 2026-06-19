@@ -3,7 +3,7 @@
 // Difficulty : Easy
 // Link       : https://leetcode.com/problems/merge-sorted-array/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: two-pointer technique from end | Time: O(m+n) | Space: O(1)
+// Approach: two-pointer technique, from end to start | Time: O(m+n) | Space: O(1)
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 12.4 MB
