@@ -3,7 +3,7 @@
 // Difficulty : Easy
 // Link       : https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: KMP-like string matching with two nested loops | Time: O(n*m) | Space: O(1))
+// Approach: KMP-like string matching with a simple sliding window | Time: O(n*m) | Space: O(1))
 // Time       : 
 // Space      : 
 // Runtime    : 99 ms  |  Memory: 9.2 MB
