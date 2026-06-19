@@ -1,0 +1,24 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 268. Missing Number
+// Difficulty : Easy
+// Link       : https://leetcode.com/problems/missing-number/
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Approach: mathematical formula, utilizing sum of arithmetic series | Time: O(n) | Space: O(1)
+// Time       : 
+// Space      : 
+// Runtime    : 0 ms  |  Memory: 21.6 MB
+// Date       : 2026-01-20
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+        int n = nums.size();
+        int sum = n*(n+1)/2;
+        int s=0;
+        for(int i = 0;i<n;i++){
+            s+=nums[i];
+        }
+        return sum - s;
+    }
+};
