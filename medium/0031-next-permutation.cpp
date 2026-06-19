@@ -3,7 +3,7 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/next-permutation/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: find the first decreasing pair and swap with the smallest larger element | Time: O(n) | Space: O(1)
+// 
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 15.6 MB
