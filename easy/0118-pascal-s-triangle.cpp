@@ -3,7 +3,7 @@
 // Difficulty : Easy
 // Link       : https://leetcode.com/problems/pascals-triangle/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: dynamic programming | Time: O(n^2) | Space: O(n^2)
+// Approach: dynamic programming | Time: O(n^2) | Space: O(n^2))
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 9.7 MB
