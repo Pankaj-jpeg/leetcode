@@ -3,7 +3,7 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/sum-of-beauty-of-all-substrings/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: brute force with nested loops, calculating frequency of each character in substring | Time: O(n^3) | Space: O(1))
+// Approach: brute force with nested loops, calculating frequency of each character in the substring | Time: O(n^3) | Space: O(1))
 // Time       : 
 // Space      : 
 // Runtime    : 13 ms  |  Memory: 9.9 MB
