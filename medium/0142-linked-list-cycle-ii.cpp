@@ -3,7 +3,7 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/linked-list-cycle-ii/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: Floyd's Tortoise and Hare algorithm (cycle detection) | Time: O(n) | Space: O(1)
+// Approach: Floyd's Tortoise and Hare algorithm (slow and fast pointers) | Time: O(n) | Space: O(1)
 // Time       : 
 // Space      : 
 // Runtime    : 3 ms  |  Memory: 11.4 MB
