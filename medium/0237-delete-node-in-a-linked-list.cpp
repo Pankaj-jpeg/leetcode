@@ -3,7 +3,7 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/delete-node-in-a-linked-list/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: overwrite the node's value and next pointer | Time: O(1) | Space: O(1)
+// Approach: in-place replacement | Time: O(1) | Space: O(1)
 // Time       : 
 // Space      : 
 // Runtime    : 5 ms  |  Memory: 12.4 MB
