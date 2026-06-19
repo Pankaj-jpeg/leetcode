@@ -3,7 +3,7 @@
 // Difficulty : Hard
 // Link       : https://leetcode.com/problems/reverse-pairs/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 
+// Approach: divide and conquer with merge sort | Time: O(n log n) | Space: O(n))
 // Time       : 
 // Space      : 
 // Runtime    : 355 ms  |  Memory: 193 MB
