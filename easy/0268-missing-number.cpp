@@ -3,7 +3,7 @@
 // Difficulty : Easy
 // Link       : https://leetcode.com/problems/missing-number/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: mathematical formula, utilizing sum of arithmetic series | Time: O(n) | Space: O(1)
+// Approach: mathematical formula for sum of first n natural numbers | Time: O(n) | Space: O(1)
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 21.6 MB
