@@ -3,7 +3,7 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/subarray-sum-equals-k/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: prefix sum with hashmap | Time: O(n) | Space: O(n)
+// Approach: prefix sum with hash map | Time: O(n) | Space: O(n)
 // Time       : 
 // Space      : 
 // Runtime    : 32 ms  |  Memory: 45.4 MB
