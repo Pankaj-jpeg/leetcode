@@ -3,7 +3,7 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: two-pointer technique with a slow and fast pointer | Time: O(L) | Space: O(1)
+// Approach: two-pointer technique with slow and fast pointers | Time: O(L) | Space: O(1)
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 15 MB
