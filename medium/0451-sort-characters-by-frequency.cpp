@@ -3,7 +3,7 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/sort-characters-by-frequency/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: greedy, find and remove max frequency character | Time: O(n) | Space: O(n)
+// Approach: greedy, find max frequency and remove from map | Time: O(n) | Space: O(n)
 // Time       : 
 // Space      : 
 // Runtime    : 1 ms  |  Memory: 11 MB
