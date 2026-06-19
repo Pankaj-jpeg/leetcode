@@ -3,7 +3,7 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/longest-consecutive-sequence/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: hash set, check for consecutive sequence | Time: O(n) | Space: O(n)
+// Approach: hash set, iterate through each number and check for consecutive sequence | Time: O(n) | Space: O(n)
 // Time       : 
 // Space      : 
 // Runtime    : 83 ms  |  Memory: 88.9 MB
