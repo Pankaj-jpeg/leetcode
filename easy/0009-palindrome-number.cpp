@@ -1,0 +1,26 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 9. Palindrome Number
+// Difficulty : Easy
+// Link       : https://leetcode.com/problems/palindrome-number/
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Approach: reverse number | Time: O(log(x)) | Space: O(1)
+// Time       : 
+// Space      : 
+// Runtime    : 1 ms  |  Memory: 8.5 MB
+// Date       : 2026-01-08
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class Solution {
+public:
+    bool isPalindrome(int x) {
+       if(x<0){return false;}
+       if(x<10){return true;}
+       long y=0,temp=x;
+       while(temp>0){
+            y = y*10 + temp%10;
+            temp /= 10;
+       }
+       //cout << y;
+       return x==y;
+    }
+};
