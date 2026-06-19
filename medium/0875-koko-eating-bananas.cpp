@@ -3,7 +3,7 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/koko-eating-bananas/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: binary search | Time: O(n log m) | Space: O(1)
+// Approach: binary search | Time: O(n log max(piles)) | Space: O(1))
 // Time       : 
 // Space      : 
 // Runtime    : 2 ms  |  Memory: 23 MB
