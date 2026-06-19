@@ -3,7 +3,7 @@
 // Difficulty : Easy
 // Link       : https://leetcode.com/problems/longest-common-prefix/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: two-pointer technique, iterate through characters | Time: O(n*m) | Space: O(n*m))
+// Approach: two-pointer technique with string iteration | Time: O(n*m) | Space: O(m))
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 11.8 MB
