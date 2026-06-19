@@ -3,7 +3,7 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/add-two-numbers/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: iterative, linked list traversal | Time: O(max(n, m)) | Space: O(1)
+// Approach: iterative, two-pointer traversal | Time: O(max(n, m)) | Space: O(1)
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 76.5 MB
