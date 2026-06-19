@@ -3,7 +3,7 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/search-in-rotated-sorted-array/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: binary search with rotation detection | Time: O(log n) | Space: O(1)
+// Approach: Binary search with rotation detection | Time: O(log n) | Space: O(1)
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 15.2 MB
