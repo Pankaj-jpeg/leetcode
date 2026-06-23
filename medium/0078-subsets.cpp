@@ -3,26 +3,29 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/subsets/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: backtracking | Time: O(2^n) | Space: O(n)
+// Approach: bit manipulation to generate all possible subsets | Time: O(n*p) | Space: O(n*p))
 // Time       : 
 // Space      : 
-// Runtime    : 0 ms  |  Memory: 10 MB
-// Date       : 2026-06-18
+// Runtime    : 0 ms  |  Memory: 9.8 MB
+// Date       : 2026-06-23
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
 public:
-    vector<vector<int>> res;vector<int> curr={};
-    void generator(vector<int>& nums,int idx){
-        res.push_back(curr);
-        for(int i=idx;i<nums.size();i++){
-            curr.push_back(nums[i]);
-            generator(nums,i+1);
-            curr.pop_back();
-        }
-    }
     vector<vector<int>> subsets(vector<int>& nums) {
-        generator(nums,0);
+        vector<vector<int>> res;vector<int> curr={};
+        int n = nums.size();
+        int p = 1<<n;
+
+        for(int i = 0;i<p;i++){
+            for(int j=0;j<n;j++){
+                if(i & (1 << (n-j-1))){
+                    curr.push_back(nums[j]);
+                }
+            }
+            res.push_back(curr);
+            curr.clear();
+        }
         return res;
     }
 };
