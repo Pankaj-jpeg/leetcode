@@ -1,0 +1,24 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 2220. Minimum Bit Flips to Convert Number
+// Difficulty : Easy
+// Link       : https://leetcode.com/problems/minimum-bit-flips-to-convert-number/
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Approach: bitwise XOR and counting set bits | Time: O(1) | Space: O(1))
+// Time       : 
+// Space      : 
+// Runtime    : 0 ms  |  Memory: 8 MB
+// Date       : 2026-06-23
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class Solution {
+public:
+    int minBitFlips(int start, int goal) {
+        int counter = start ^ goal;
+        int cnt = 0;
+        for(int i = 0;i<32;i++){
+            if((counter & (1 << i))) cnt++;
+        }
+
+        return cnt;
+    }
+};
