@@ -6,8 +6,8 @@
 // Approach: binary search | Time: O(log n) | Space: O(1)
 // Time       : 
 // Space      : 
-// Runtime    : 0 ms  |  Memory: 13.6 MB
-// Date       : 2026-06-04
+// Runtime    : 0 ms  |  Memory: 13.5 MB
+// Date       : 2026-06-26
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
@@ -16,24 +16,16 @@ public:
         int low =0;
         int high = nums.size()-1;
         int mid;
-        if(nums.size()==1){
-            if(nums[0] >= target){
-                return 0;
-            }
-            else{
-                return 1; 
-            }
-        }
 
-        while(low<=high){
+        while(low<high){
             mid = low + (high-low)/2;
-            if(target > nums[mid])
-                low = mid +1;
-            else if (target < nums[mid])
-                high = mid-1;
-            else
-                return mid;
+            if(target <= nums[mid])
+                high = mid;
+            else 
+                low = mid+1;
         }
+        if(low == nums.size()-1 && target > nums[low])  
+            return nums.size();
         return low;
     }
 };
