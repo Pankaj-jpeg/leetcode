@@ -3,16 +3,16 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/min-stack/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: two-pointer stack with min tracking | Time: O(1) | Space: O(n)
+// Approach: maintaining a stack with both value and min value | Time: O(1) | Space: O(n)
 // Time       : 
 // Space      : 
-// Runtime    : 78 ms  |  Memory: 166.5 MB
-// Date       : 2026-06-28
+// Runtime    : 46 ms  |  Memory: 152.4 MB
+// Date       : 2026-06-29
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class MinStack {
 public:
-    vector<vector<int>> stk;
+    vector<pair<int,int>> stk;
     MinStack() {
     }
     
@@ -27,11 +27,11 @@ public:
     }
     
     int top() {
-        return stk.empty() ? -1 : stk.back()[0];
+        return stk.empty() ? -1 : stk.back().first;
     }
     
     int getMin() {
-        return stk.empty() ? -1 : stk.back()[1];
+        return stk.empty() ? -1 : stk.back().second;
     }
 };
 
