@@ -1,0 +1,28 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 3978. Unique Middle Element
+// Difficulty : Easy
+// Link       : https://leetcode.com/problems/unique-middle-element/
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Approach: direct comparison | Time: O(n) | Space: O(1)
+// Time       : 
+// Space      : 
+// Runtime    : 0 ms  |  Memory: 31 MB
+// Date       : 2026-07-04
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class Solution {
+public:
+    bool isMiddleElementUnique(vector<int>& nums) {
+        int n = nums.size();
+
+        int mid = nums[n/2];
+
+
+        for(int i =0;i<n;i++){
+            if(i != n/2 && nums[i] == mid)
+                return false;
+        }
+
+        return true;
+    }
+};
