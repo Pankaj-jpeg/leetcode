@@ -7,11 +7,11 @@ Auto-synced — best accepted submission per problem (lowest time complexity).
 | Difficulty | Solved |
 |------------|--------|
 | 🟢 Easy    | 46 |
-| 🟡 Medium  | 72 |
-| 🔴 Hard    | 10 |
-| **Total**  | **128** |
+| 🟡 Medium  | 73 |
+| 🔴 Hard    | 11 |
+| **Total**  | **130** |
 
-*Last updated: 2026-07-02*
+*Last updated: 2026-07-04*
 
 ## 📁 Structure
 
