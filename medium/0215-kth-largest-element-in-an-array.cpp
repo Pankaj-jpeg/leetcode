@@ -3,22 +3,19 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/kth-largest-element-in-an-array/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: maintaining a max heap of size k | Time: O(n log k) | Space: O(k)
+// Approach: sorting using nth_element | Time: O(n log n) | Space: O(1)
 // Time       : 
 // Space      : 
-// Runtime    : 39 ms  |  Memory: 61.5 MB
-// Date       : 2026-01-11
+// Runtime    : 0 ms  |  Memory: 69 MB
+// Date       : 2026-07-07
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
 public:
+
     int findKthLargest(vector<int>& nums, int k) {
-        priority_queue<int,vector<int>,greater<int>> pq;
-        for(int i=0;i<nums.size();i++){
-            pq.push(nums[i]);
-            if(pq.size() > k)
-                pq.pop();
-        }
-        return pq.top();
+        int n = nums.size();
+        nth_element(nums.begin(),nums.end()-k,nums.end());
+        return nums[n-k];
     }
 };
