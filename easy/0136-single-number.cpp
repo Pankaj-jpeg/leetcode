@@ -6,17 +6,19 @@
 // Approach: bitwise XOR operation | Time: O(n) | Space: O(1)
 // Time       : 
 // Space      : 
-// Runtime    : 0 ms  |  Memory: 20.5 MB
-// Date       : 2026-05-24
+// Runtime    : 0 ms  |  Memory: 20.7 MB
+// Date       : 2026-07-14
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        int n=0;
-        for(int i=0;i<nums.size();i++){
-            n = n^nums[i];
+        int Xor = 0;
+
+        for(int i = 0;i<nums.size();i++){
+            Xor = Xor ^ nums[i];
         }
-        return n;
+
+        return Xor;
     }
 };
