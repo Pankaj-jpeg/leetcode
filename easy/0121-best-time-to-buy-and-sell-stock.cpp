@@ -3,26 +3,25 @@
 // Difficulty : Easy
 // Link       : https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: single pass, keep track of minimum price and maximum profit | Time: O(n) | Space: O(1)
+// Approach: single pass, keep track of min price and max profit | Time: O(n) | Space: O(1)
 // Time       : 
 // Space      : 
-// Runtime    : 0 ms  |  Memory: 97.5 MB
-// Date       : 2026-05-25
+// Runtime    : 0 ms  |  Memory: 97.3 MB
+// Date       : 2026-07-14
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
 public:
-    int maxProfit(vector<int>& nums) {
-        int min=nums[0];int max_prof=0;int profit=0;
-        for(int i=0;i<nums.size();i++){
-            profit = nums[i]-min;
-            if(profit > max_prof){
-                max_prof = profit;
-            }
-            if(nums[i]<min){
-                min = nums[i];
-            }
-       } 
-       return max_prof;
-    } 
+    int maxProfit(vector<int>& prices) {
+        int Max = 0;
+        int Min = INT_MAX;
+        int profit;
+
+        for(int i = 0;i<prices.size();i++){
+            Min = min(Min,prices[i]);
+            profit = prices[i] - Min;
+            Max = max(Max,profit);
+        }
+        return Max;
+    }
 };
