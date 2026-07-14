@@ -3,70 +3,69 @@
 // Difficulty : Hard
 // Link       : https://leetcode.com/problems/reverse-pairs/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: divide and conquer with merge sort | Time: O(n log n) | Space: O(n))
+// Approach: divide and conquer, merge sort | Time: O(n log n) | Space: O(n)
 // Time       : 
 // Space      : 
-// Runtime    : 355 ms  |  Memory: 193 MB
-// Date       : 2026-06-03
+// Runtime    : 507 ms  |  Memory: 243.5 MB
+// Date       : 2026-07-14
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
 public:
-    void merge(vector<int>& nums,int low,int mid,int high){
-        if(nums[mid] <= nums[mid+1]){
-            return;
-        }
-        vector<int> res;
-        int start = low;
-        int start2 = mid+1;
-        while(start <= mid && start2 <= high){
-            if(nums[start] <= nums[start2]){
-                res.push_back(nums[start]);
-                start++;
+    int pairs(vector<int>& nums,int low,int mid,int high){
+        int cnt = 0;
+        int i = low;
+        int j = mid+1;
+        while(j<=high && i<=mid){
+            if(nums[i] > (long long)2*nums[j]){
+                cnt+=(mid-i+1);
+                j++;
             }
             else{
-                res.push_back(nums[start2]);
-                start2++;
+                i++;
+            }
+            
+        }
+        return cnt;
+    }
+    int merge(vector<int>& nums,int low,int mid,int high){
+        vector<int> merged;
+        int i = low;
+        int j = mid+1;
+        int pair = pairs(nums,low,mid,high);
+        while(i<=mid && j<=high){
+            if(nums[i] <= nums[j]){
+                merged.push_back(nums[i]);
+                i++;
+            }
+            else{
+                merged.push_back(nums[j]);
+                j++;
             }
         }
-        while(start <= mid){
-            res.push_back(nums[start]);
-            start++;
-        }
-        while(start2<=high){
-            res.push_back(nums[start2]);
-            start2++;
-        }
-        int i=low;
-        for(int num:res){
-            nums[i] = num;
+        while(i<=mid){
+            merged.push_back(nums[i]);
             i++;
         }
-    }
-    int cnt=0;
-    void count(vector<int>& nums,int low,int mid,int high){
-        int right = mid+1;
-        
-        for(int i = low;i<=mid;i++){
-            while(right<=high && (long long)nums[i] > 2LL*nums[right]){
-                right++;
-            }
-            cnt+= right-(mid+1);
+        while(j<=high){
+            merged.push_back(nums[j]);
+            j++;
         }
-    }
-    void mergesort(vector<int>& nums,int low,int high){
-        if(low >= high){
-            return ;
+        int k = low;
+        for(int i = 0;i<merged.size();i++){
+            nums[k] = merged[i];k++;
         }
-        int mid = (low + high)/2;
+        return pair;
+    }
+    int mergeSort(vector<int>&nums,int low,int high){
+        if(low >= high)
+            return 0;
 
-        mergesort(nums,low,mid);
-        mergesort(nums,mid+1,high);
-        count(nums,low,mid,high);
-        merge(nums,low,mid,high);
+        int mid = low + (high - low)/2;
+
+        return  mergeSort(nums,low,mid) + mergeSort(nums,mid+1,high) + merge(nums,low,mid,high);
     }
     int reversePairs(vector<int>& nums) {
-        mergesort(nums,0,nums.size()-1);
-        return cnt;
+        return mergeSort(nums,0,nums.size()-1);
     }
 };
