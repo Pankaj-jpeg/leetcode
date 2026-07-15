@@ -3,33 +3,32 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: binary search with rotation detection | Time: O(log n) | Space: O(1)
+// Approach: binary search, divide array into two halves | Time: O(log n) | Space: O(1)
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 14.2 MB
-// Date       : 2026-06-26
+// Date       : 2026-07-15
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
 public:
     int findMin(vector<int>& nums) {
+        int n = nums.size();
         int low = 0;
-        int high = nums.size()-1;
+        int high = n-1;
         int mid;
-        
-        while(low < high){
+
+        while(low<high){
             mid = low + (high-low)/2;
-            if(nums[low] <= nums[mid])
-                if(nums[mid] > nums[high])
-                    low = mid+1;
-                else    
-                    high = mid;
-            else
-                if(nums[mid] <= nums[high])
-                    high = mid;
-                else
-                    low = mid+1;
+
+            if(nums[mid] <= nums[high]){
+                high = mid;
+            }
+            else{
+                low = mid+1;
+            }
         }
+
         return nums[low];
     }
 };
