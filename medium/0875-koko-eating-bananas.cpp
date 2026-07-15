@@ -6,34 +6,42 @@
 // Approach: binary search | Time: O(n log max(piles)) | Space: O(1))
 // Time       : 
 // Space      : 
-// Runtime    : 2 ms  |  Memory: 23 MB
-// Date       : 2026-06-10
+// Runtime    : 8 ms  |  Memory: 22.9 MB
+// Date       : 2026-07-15
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
 public:
-
-    bool feasible(int k,vector<int>& piles,int h){
-        int temp=0;
-        for(int i=0;i<piles.size();i++){
-            temp += (piles[i]+k-1)/k;
+    bool feasible(vector<int>& piles,int mid,int h){
+        int time = 0;
+        int n = piles.size();
+        int i = 0;
+        while(i<n){
+            if(piles[i] <= mid){
+                time++;
+            }
+            else{
+                if(piles[i]%mid == 0)
+                    time+=(piles[i]/mid);
+                else
+                    time+=(piles[i]/mid) + 1;
+            }
+            i++;
         }
-        return temp <= h;
+        return time<=h;
     }
     int minEatingSpeed(vector<int>& piles, int h) {
-        int n = piles.size();
         int low = 1;
         int high = *max_element(piles.begin(),piles.end());
         int mid;
-
         while(low<high){
             mid = low + (high-low)/2;
-
-            if(feasible(mid , piles, h))
+            if(feasible(piles,mid,h))
                 high = mid;
-            else
-                low = mid + 1;
-        }
+            else    
+                low = mid+1;
+        }   
+
         return low;
     }
 };
