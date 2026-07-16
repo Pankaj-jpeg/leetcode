@@ -3,58 +3,74 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/reverse-words-in-a-string/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: two passes, first reverse the entire string and then reverse each word | Time: O(n) | Space: O(n)
+// Approach: two passes, first to remove extra spaces and then to reverse words | Time: O(n) | Space: O(n)
 // Time       : 
 // Space      : 
-// Runtime    : 0 ms  |  Memory: 10 MB
-// Date       : 2026-06-13
+// Runtime    : 0 ms  |  Memory: 9.9 MB
+// Date       : 2026-07-16
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
 public:
     string reverseWords(string s) {
-        int i = 0,j = s.length();
-        while(i<j){
-            int start = i;
-            while(i < j && s[i]!=' '){
-                i++;
-            }
-            int next = i;
-            i--;
-            
-            while(start<i){
-                swap(s[start],s[i]);
-                start++;i--;
-            }
-            i = next;
+        int i = 0;
+        int j = 0;
+
+
+        //remove leading whitespace
+        while(s[i] == ' '){
             i++;
         }
-        j = s.length()-1;
-        i = 0;
-        while(i < j){
-            swap(s[i],s[j]);
-            i++;j--;
-        }
-        cout << s;
-        i = 0;int n = s.length();
-        int wrt = 0;
-        while(i<n){
-            while(s[i] == ' '){
-                i++;
-            }
-            while(i < n && s[i] != ' '){
-                if(s[i] == ' '){
-                    i++;continue;
-                }
-                s[wrt++] = s[i++];
-            }
-            while(s[i] == ' '){
-                i++;
-            }
-            if(i < n)
-                s[wrt++] = ' ';
-        }
+        s.erase(0,i);
+
+        //removing trailing whitespace
+        int n = s.size();   
+        i = n-1;
+        while(s[i] == ' ')
+            i--;
         
-        return s.substr(0,wrt);
+        s.erase(i+1,n-1-i);
+
+        //remove extra spaces
+        i = 0;
+        j = 0;
+        n = s.size();
+
+        while(i<n){
+            if(s[i]!=' '){
+                s[j] = s[i];
+                i++;
+                j++;
+            }
+            else{
+                s[j] = s[i];
+                j++;
+                while(i<n && s[i] == ' ')
+                    i++;
+
+            }
+
+        }
+        s.resize(j);
+
+        i = 0;
+        j = 0;
+        n = s.size();
+        while(i<n){
+            if(s[i] != ' ')
+                i++;
+            else{
+                reverse(s.begin()+j,s.begin()+i);
+                i++;
+                j = i;
+            }
+        }
+        if(i>j)
+            reverse(s.begin()+j,s.begin()+i);
+        
+        reverse(s.begin(),s.end());
+
+
+        return s;
     }
 };
