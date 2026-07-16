@@ -3,32 +3,22 @@
 // Difficulty : Easy
 // Link       : https://leetcode.com/problems/rotate-string/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: brute force, shifting string | Time: O(n^2) | Space: O(n))
+// Approach: string concatenation and search | Time: O(n) | Space: O(n)
 // Time       : 
 // Space      : 
-// Runtime    : 0 ms  |  Memory: 8.5 MB
-// Date       : 2026-06-13
+// Runtime    : 0 ms  |  Memory: 8 MB
+// Date       : 2026-07-16
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
 public:
-    string fun(string s){
-        char first = s[0];
-        s.erase(0,1);
-        s.push_back(first);
-        return s;
-    }
     bool rotateString(string s, string goal) {
-        int shift = 1;
-        while(shift <= s.length()){
-            s = fun(s);
-            if(goal == s)
-                return true;
-            else{
-                shift++;
-            }
-                
-        }
-        return false;
+        int m = s.size();
+        int n = goal.size();
+
+        if(m!=n)
+            return false;
+        
+        return (s+s).find(goal)!=string::npos;
     }
 };
