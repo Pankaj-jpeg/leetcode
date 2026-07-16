@@ -3,36 +3,35 @@
 // Difficulty : Easy
 // Link       : https://leetcode.com/problems/isomorphic-strings/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: two-way mapping | Time: O(n) | Space: O(n)
+// Approach: two-way mapping using unordered maps | Time: O(n) | Space: O(n)
 // Time       : 
 // Space      : 
-// Runtime    : 0 ms  |  Memory: 9.5 MB
-// Date       : 2026-06-13
+// Runtime    : 1 ms  |  Memory: 9.4 MB
+// Date       : 2026-07-16
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
 public:
     bool isIsomorphic(string s, string t) {
-        unordered_map <char,char> for_map;
-        unordered_map <char,char> back_map;
-        bool found_in_for;
-        bool found_in_back;
+        unordered_map<char,char> forw;
+        unordered_map<char,char> back;
+        int m = s.length();
+        int n = t.length();
 
-        int i=0;
-        while(i<s.length()){
-            found_in_for = for_map.find(s[i]) != for_map.end();
-            found_in_back = back_map.find(t[i]) != back_map.end();
-            if(!found_in_for && !found_in_back){
-                for_map.insert({s[i],t[i]});
-                back_map.insert({t[i],s[i]});
+        if(m!=n)
+            return false;
+        
+        for(int i = 0;i<m;i++){
+            if(!forw.contains(s[i]) && !back.contains(t[i])){
+                forw[s[i]] = t[i];
+                back[t[i]] = s[i];
             }
-            else{
-                if(found_in_for && for_map.find(s[i])->second != t[i] || found_in_back && back_map.find(t[i])->second != s[i])
+            else
+                if(t[i] != forw[s[i]] || s[i] != back[t[i]])
                     return false;
-            }
-            i++;
         }
-        return true;
 
+
+        return true;
     }
 };
