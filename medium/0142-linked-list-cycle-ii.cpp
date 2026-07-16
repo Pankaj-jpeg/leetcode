@@ -6,8 +6,8 @@
 // Approach: Floyd's Tortoise and Hare algorithm (slow and fast pointers) | Time: O(n) | Space: O(1)
 // Time       : 
 // Space      : 
-// Runtime    : 3 ms  |  Memory: 11.4 MB
-// Date       : 2026-06-15
+// Runtime    : 3 ms  |  Memory: 11.2 MB
+// Date       : 2026-07-16
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
@@ -24,29 +24,23 @@ public:
         ListNode* slow = head;
         ListNode* fast = head;
 
-        if(head == NULL || head->next == NULL)
-            return NULL;
+        if(head == nullptr || head->next == nullptr)
+            return nullptr;
 
-        bool flag = false;
-        while(fast!=NULL && fast->next != NULL){
+        while(slow!=nullptr && fast!=nullptr && fast->next!=nullptr){
             slow = slow->next;
             fast = fast->next->next;
-            if(slow == fast){
-                flag = true;
+            if(slow == fast)
                 break;
-            }
         }
-        if(!flag)
-            return NULL;
-
-        ListNode* curr = head;
-        while(curr!=slow){
-            curr = curr->next;
+        if(slow != fast)
+            return nullptr;
+        
+        ListNode* res = head;
+        while(res!=slow){
+            res = res->next;
             slow = slow->next;
         }
-
-        return curr;
-
-        
+        return res;
     }
 };
