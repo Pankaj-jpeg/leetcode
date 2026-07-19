@@ -3,34 +3,38 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/generate-binary-strings-without-adjacent-zeros/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: depth-first search | Time: O(2^n) | Space: O(n)
+// Approach: backtracking with pruning | Time: O(2^n) | Space: O(n)
 // Time       : 
 // Space      : 
-// Runtime    : 4 ms  |  Memory: 22.7 MB
-// Date       : 2026-06-18
+// Runtime    : 3 ms  |  Memory: 20.9 MB
+// Date       : 2026-07-17
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
 public:
-    vector<string> res;string curr ="";int N;
-    void generator(char c,int n){
-        curr += c;
-        if(curr.length() == n){
-            res.push_back(curr);curr.pop_back();
+    void recur(vector<string>& res,string& curr,int n){
+        if(curr.size() == n){
+            res.push_back(curr);
             return;
         }
-
-        if(c!='0'){
-            generator('0',n);
-        }
-        generator('1',n);
+        
+        //add 1
+        curr.push_back('1');
+        recur(res,curr,n);
         curr.pop_back();
 
+        //add 0
+        if(curr.size()==0 || curr.back() == '1'){
+            curr.push_back('0');
+            recur(res,curr,n);
+            curr.pop_back();
+        }
     }
     vector<string> validStrings(int n) {
-        generator('0',n);
-        generator('1',n);
-    
-        return res;
+        vector<string> res;
+        string curr = "";
+        recur(res,curr,n); 
+
+        return res;   
     }
 };
