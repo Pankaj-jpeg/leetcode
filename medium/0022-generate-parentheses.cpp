@@ -6,30 +6,39 @@
 // Approach: backtracking with recursive depth-first search | Time: O(4^n / n^(3/2)) | Space: O(n))
 // Time       : 
 // Space      : 
-// Runtime    : 0 ms  |  Memory: 13.3 MB
-// Date       : 2026-06-18
+// Runtime    : 4 ms  |  Memory: 13.1 MB
+// Date       : 2026-07-17
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
 public:
-    vector<string> res;string curr = "";
-    void generator(char ch,int n,int count_for,int count_back){
-        curr+=ch;
-        if(curr.length() == 2*n){
-            res.push_back(curr);curr.pop_back();
+    void recur(vector<string>& res,string& curr,int& open_cnt,int& curr_cnt,int n){
+        if(curr.size() == 2*n){
+            res.push_back(curr);
             return;
         }
-        if(count_back)
-            generator(')',n,count_for,count_back-1);
-        if(count_for)
-            generator('(',n,count_for-1,count_back+1);
 
-        curr.pop_back();
+        //add ( 
+        if(open_cnt < n){
+            curr.push_back('(');open_cnt++;curr_cnt++;
+            recur(res,curr,open_cnt,curr_cnt,n);
+            open_cnt--;curr.pop_back();curr_cnt--;
+        }
 
+        //add )
+
+        if(curr_cnt>0){
+            curr.push_back(')');curr_cnt--;
+            recur(res,curr,open_cnt,curr_cnt,n);
+            curr_cnt++;curr.pop_back();
+        }
     }
     vector<string> generateParenthesis(int n) {
-        generator('(',n,n-1,1);
-
+        vector<string> res;
+        string curr = "";
+        int open_cnt = 0;
+        int curr_cnt = 0;
+        recur(res,curr,open_cnt,curr_cnt,n);
         return res;
     }
 };
