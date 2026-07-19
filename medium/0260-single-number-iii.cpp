@@ -3,33 +3,41 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/single-number-iii/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: bitwise XOR and divide into two groups | Time: O(n) | Space: O(1)
+// Approach: bitwise manipulation, finding the rightmost set bit | Time: O(n) | Space: O(1)
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 13.9 MB
-// Date       : 2026-06-24
+// Date       : 2026-07-19
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
 public:
     vector<int> singleNumber(vector<int>& nums) {
-        int res = 0;
-        for(int i =0;i<nums.size();i++){
-            res^=nums[i];
+        int Xor = 0;
+
+        for(int i = 0;i<nums.size();i++){
+           Xor = (Xor^nums[i]);
         }
 
-        int g1 = 0;
-        int g2 = 0;
-        int set = 0;
-        for(int i = 0;i<32;i++){
-            if((1 << i)&res) set = 1<<i;
+        int q = 1;
+        while(true){
+            if(Xor & q) break;
+            q = (q << 1);
+        }
+        int n = nums.size();
+        int a = 0;
+        for(int i = 0;i<n;i++){
+            if((nums[i]&q) == 0){
+                a = (a^nums[i]);
+            }
         }
 
-        for(int i =0;i<nums.size();i++){
-            if(set&nums[i]) g1^=nums[i];
-            else g2^=nums[i];
+        int b = 0;
+        for(int i = 0;i<n;i++){
+            if(nums[i]&q){
+                b = (b^nums[i]);
+            }
         }
-        return {g1,g2};
-
+        return {a,b};
     }
 };
