@@ -3,20 +3,20 @@
 // Difficulty : Easy
 // Link       : https://leetcode.com/problems/number-of-1-bits/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: bitwise manipulation, counting set bits | Time: O(1) | Space: O(1)
+// Approach: bitwise manipulation, counting set bits | Time: O(log(n)) | Space: O(1))
 // Time       : 
 // Space      : 
-// Runtime    : 0 ms  |  Memory: 8.2 MB
-// Date       : 2026-06-23
+// Runtime    : 0 ms  |  Memory: 8.3 MB
+// Date       : 2026-07-18
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
 public:
     int hammingWeight(int n) {
-        int cnt=0;
-
-        for(int i = 0;i<32;i++){
-            if((n & (1 << i)))cnt++;
+        int cnt = 0;
+        while(n>0){
+            cnt+=(n & 1);
+            n = (n >> 1); 
         }
 
         return cnt;
