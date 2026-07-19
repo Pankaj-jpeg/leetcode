@@ -3,19 +3,18 @@
 // Difficulty : Easy
 // Link       : https://leetcode.com/problems/power-of-two/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: bitwise operation, checking for zero bits | Time: O(1) | Space: O(1)
+// Approach: bitwise operation, checking for zero in the least significant bit | Time: O(1) | Space: O(1)
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 8 MB
-// Date       : 2026-06-23
+// Date       : 2026-07-18
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
 public:
     bool isPowerOfTwo(int n) {
-        if(n > 0)
-            return (n & n-1) == 0;
-        else
-            return false;
+        if(n<=0) return false;
+        int  k = n - 1;
+        return (k&n) == 0;
     }
 };
