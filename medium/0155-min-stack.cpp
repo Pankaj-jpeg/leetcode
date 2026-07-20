@@ -3,35 +3,39 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/min-stack/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: maintaining a stack with both value and min value | Time: O(1) | Space: O(n)
+// Approach: maintaining a stack with both value and min value pairs | Time: O(1) | Space: O(n)
 // Time       : 
 // Space      : 
-// Runtime    : 46 ms  |  Memory: 152.4 MB
-// Date       : 2026-06-29
+// Runtime    : 60 ms  |  Memory: 152.5 MB
+// Date       : 2026-07-20
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class MinStack {
 public:
     vector<pair<int,int>> stk;
     MinStack() {
+        
     }
     
     void push(int value) {
-        int min = getMin();
-        if(stk.empty() || min > value) min = value;
-        stk.push_back({value,min});
+        int Min = getMin();
+        if(stk.empty() || Min > value)Min = value;
+        stk.push_back({value,Min});  
     }
     
     void pop() {
+        if(stk.empty())return;
         stk.pop_back();
     }
     
     int top() {
-        return stk.empty() ? -1 : stk.back().first;
+        if(stk.empty())return -1;
+        return stk.back().first;
     }
     
     int getMin() {
-        return stk.empty() ? -1 : stk.back().second;
+        if(stk.empty())return -1;
+        return stk.back().second;
     }
 };
 
