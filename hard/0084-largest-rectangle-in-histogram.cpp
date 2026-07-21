@@ -6,8 +6,8 @@
 // Approach: stack-based histogram scanning | Time: O(n) | Space: O(n)
 // Time       : 
 // Space      : 
-// Runtime    : 3 ms  |  Memory: 78.6 MB
-// Date       : 2026-07-02
+// Runtime    : 5 ms  |  Memory: 78.7 MB
+// Date       : 2026-07-21
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
