@@ -3,49 +3,53 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/sum-of-subarray-minimums/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: two-pointer technique with stack | Time: O(n) | Space: O(n)
+// Approach: two passes, stack-based | Time: O(n) | Space: O(n)
 // Time       : 
 // Space      : 
-// Runtime    : 31 ms  |  Memory: 191.9 MB
-// Date       : 2026-07-01
+// Runtime    : 82 ms  |  Memory: 193.5 MB
+// Date       : 2026-07-21
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
 public:
     int sumSubarrayMins(vector<int>& arr) {
-        long temp = pow(10,9) + 7;
+        long temp = 1000000007;
         int n = arr.size();
-        long total = 0;
-        vector<int> L(n,0);
-        vector<int> R(n,0);
-        stack<int,vector<int>> stk;
-        for(int i = 0;i<n;i++){
-            while(!stk.empty() && arr[i] < arr[stk.top()])
-                stk.pop();
-            
-            if(!stk.empty())
-                L[i] = i - (stk.top()) - 1;
-            else
-                L[i] = i;
-            stk.push(i);
-        }
-        while(!stk.empty()) 
-            stk.pop();
+        vector<int> L(n,-1);
+        vector<int> R(n,n);
+        long long total = 0;
+        stack<int> stk;
+
         for(int i = n-1;i>=0;i--){
-            while(!stk.empty() && arr[i] <= arr[stk.top()])
+            while(!stk.empty() && arr[stk.top()] >= arr[i])
                 stk.pop();
             
             if(!stk.empty())
-                R[i] = stk.top() - i - 1;
-            else
-                R[i] = (n-1) - i;
+                R[i] = stk.top();
+            
             stk.push(i);
-        }
-        
-        for(int i = 0;i<n;i++){
-            total = (total + (long)arr[i]*(L[i]+1)*(R[i]+1))%temp;
         }
 
-        return total;
+
+        while(!stk.empty())
+            stk.pop();
+
+
+        for(int i = 0;i<n;i++){
+            while(!stk.empty() && arr[stk.top()] > arr[i])
+                stk.pop();
+            
+            if(!stk.empty())
+                L[i] = stk.top();
+            
+            stk.push(i);
+        }
+
+
+        for(int i = 0;i<n;i++){
+            total += ((long long)arr[i]*(long long)(i-L[i])*(long long)(R[i]-i)) % temp;
+        }
+
+        return total%temp;
     }
 };
