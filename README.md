@@ -11,7 +11,7 @@ Auto-synced — best accepted submission per problem (lowest time complexity).
 | 🔴 Hard    | 20 |
 | **Total**  | **187** |
 
-*Last updated: 2026-07-20*
+*Last updated: 2026-07-21*
 
 ## 📁 Structure
 
