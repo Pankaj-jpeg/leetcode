@@ -3,50 +3,52 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/lru-cache/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: combination of linked list and unordered map for LRU cache | Time: O(1) | Space: O(capacity))
+// Approach: LRU Cache implementation using a combination of a doubly linked list (list) and an unordered map (unordered_map) | Time: O(1) | Space: O(capacity))
 // Time       : 
 // Space      : 
-// Runtime    : 47 ms  |  Memory: 173.2 MB
-// Date       : 2026-07-04
+// Runtime    : 115 ms  |  Memory: 182.1 MB
+// Date       : 2026-07-22
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 class LRUCache {
 public:
+    list<int> l;
+    unordered_map<int,pair<std::list<int>::iterator,int>> m;
     int max;
-    list<int> q;
-    unordered_map<int,pair<std::list<int> :: iterator,int>> m;
     LRUCache(int capacity) {
-        max = capacity;    
+        max = capacity;
     }
     int get(int key) {
         if(m.find(key) == m.end())
             return -1;
         
-        q.splice(q.begin(),q,m.find(key)->second.first);
-
+        auto it = m.find(key)->second.first;
+        l.erase(it);
+        l.push_front(key);
+        m.find(key)->second.first = l.begin();
         return m.find(key)->second.second;
-
     }
-    
     void put(int key, int value) {
-        if(m.find(key) == m.end() && m.size() < max){
-            q.push_front(key);
-            auto it = q.begin();
+        if(m.find(key) == m.end() && m.size() == max)
+        {
+            int temp = l.back();
+            m.erase(temp);
+            l.pop_back();
+            l.push_front(key);
+            auto it = l.begin();
             m.insert({key,{it,value}});
         }
-        else if(m.find(key) != m.end()){
-            get(key);
+        else if (m.find(key) != m.end()){
             m.find(key)->second.second = value;
+            get(key);
         }
         else{
-            int eject = q.back();
-            q.pop_back();
-            m.erase(eject);
-            q.push_front(key);
-            auto it = q.begin();
+            l.push_front(key);
+            auto it = l.begin();
             m.insert({key,{it,value}});
         }
+
     }
 };
 
