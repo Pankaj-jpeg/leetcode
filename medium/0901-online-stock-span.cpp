@@ -3,11 +3,11 @@
 // Difficulty : Medium
 // Link       : https://leetcode.com/problems/online-stock-span/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 
+// Approach: stack-based, maintaining a decreasing price sequence | Time: O(n) | Space: O(n)
 // Time       : 
 // Space      : 
-// Runtime    : 15 ms  |  Memory: 92 MB
-// Date       : 2026-07-03
+// Runtime    : 25 ms  |  Memory: 91.9 MB
+// Date       : 2026-07-22
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class StockSpanner {
@@ -17,16 +17,13 @@ public:
     }
     
     int next(int price) {
-        int cnt = 0;
+        int cnt = 1;
         while(!stk.empty() && stk.top().first <= price){
-            cnt+=stk.top().second;
+            cnt+=(stk.top().second);
             stk.pop();
-            cnt++;
         }
-
         stk.push({price,cnt});
-
-        return cnt+1;
+        return cnt;
     }
 
 };
