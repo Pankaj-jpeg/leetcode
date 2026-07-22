@@ -6,8 +6,8 @@
 // Approach: two-pointer technique with dynamic adjustment | Time: O(n) | Space: O(1)
 // Time       : 
 // Space      : 
-// Runtime    : 3 ms  |  Memory: 69.6 MB
-// Date       : 2026-07-05
+// Runtime    : 0 ms  |  Memory: 69.7 MB
+// Date       : 2026-07-22
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
@@ -16,33 +16,23 @@ public:
         int l = 0;
         int r = 0;
         int n = nums.size();
-        int zeroes = 0;
         int Max = 0;
-        
+        int cnt = 0;
         while(r<n){
-            if(nums[r] == 0){
-                if(k == 0){
-                    r++;
-                    l=r;
-                    continue;
-                }
-                else if(zeroes < k){
-                    zeroes++;
-                }
-                else{
-                    while(zeroes==k){
-                        if(nums[l] == 0){
-                            zeroes--;
-                        }
+            if(cnt<k){
+                if(nums[r] == 0)
+                    cnt++;
+            }
+            else{
+                if(!nums[r]){
+                    while(l<n && nums[l])
                         l++;
-                    }
-                    zeroes++;
+                    l++;
                 }
             }
-            Max = max(Max,r - l + 1);
-            r++;         
-        }
-
+            Max = max(Max,r-l+1);
+            r++;
+        } 
         return Max;
     }
 };
