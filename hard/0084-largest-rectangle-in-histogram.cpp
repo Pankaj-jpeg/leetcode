@@ -6,33 +6,25 @@
 // Approach: stack-based histogram scanning | Time: O(n) | Space: O(n)
 // Time       : 
 // Space      : 
-// Runtime    : 5 ms  |  Memory: 78.7 MB
-// Date       : 2026-07-21
+// Runtime    : 12 ms  |  Memory: 79.5 MB
+// Date       : 2026-07-22
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
 public:
     int largestRectangleArea(vector<int>& heights) {
+        stack<int> stk;
         int n = heights.size();
-        stack<int,vector<int>> stk;
         int Max = 0;
 
         for(int i = 0;i<=n;i++){
-            int h;
-            if(i == n)
-                h = 0;
-            else
-                h = heights[i]; 
-            
-            while(!stk.empty() && h <= heights[stk.top()]){
-                int height = heights[stk.top()];
+            while(!stk.empty() && (i == n || heights[stk.top()] >= heights[i])){
+                int h = heights[stk.top()];
                 stk.pop();
-                int width = stk.empty() ? i : i - stk.top() - 1;
-                Max = max(Max,width*height);
+                int width = stk.empty() ? i : i- stk.top() - 1;
+                Max = max(Max,h*width); 
             }
-
             stk.push(i);
-
         }
 
         return Max;
