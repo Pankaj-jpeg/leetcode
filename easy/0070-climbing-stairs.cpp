@@ -1,0 +1,29 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 70. Climbing Stairs
+// Difficulty : Easy
+// Link       : https://leetcode.com/problems/climbing-stairs/
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Approach: dynamic programming with two variables | Time: O(n) | Space: O(1)
+// Time       : 
+// Space      : 
+// Runtime    : 0 ms  |  Memory: 7.8 MB
+// Date       : 2026-07-29
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class Solution {
+public:
+    int climbStairs(int n) {
+        int prev = 1;
+        int prev1 = 1;
+
+        int curr = 1;;
+
+        for(int i = 2;i<=n;i++){
+            curr = prev + prev1;
+            prev1 = prev;
+            prev = curr;
+        }
+
+        return curr;
+    }
+};
