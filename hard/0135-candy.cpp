@@ -3,11 +3,11 @@
 // Difficulty : Hard
 // Link       : https://leetcode.com/problems/candy/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Approach: dynamic programming with state machine | Time: O(n) | Space: O(1)
+// Approach: dynamic programming with separate counters for up and down sequences | Time: O(n) | Space: O(1)
 // Time       : 
 // Space      : 
-// Runtime    : 0 ms  |  Memory: 22.2 MB
-// Date       : 2026-07-09
+// Runtime    : 3 ms  |  Memory: 22.1 MB
+// Date       : 2026-08-08
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
@@ -16,28 +16,31 @@ public:
         int n = ratings.size();
 
         int candies = 1;
-        int up = 0 ,down=0,peak=0;
+        int up = 1;
+        int down = 1;
+        int peak = 1;
         for(int i = 1;i<n;i++){
-            if(ratings[i] - ratings[i-1] > 0){
+            if(ratings[i] > ratings[i-1]){
+                candies+=(up+1);
                 up++;
                 peak = up;
-                candies+=(up+1);
-                down=0;
-                
+                down = 1;
             }
-            else if(ratings[i] - ratings[i-1] == 0){
+            else if (ratings[i] == ratings[i-1]){
                 candies+=1;
-                peak = 0;
-                up = 0;
-                down = 0;
+                peak = 1;
+                up = 1;
+                down = 1;
             }
             else{
-                down++;up = 0;
-                candies+=(down+1) - int(peak>=down);
+                candies+=(down);
+                if(down >= peak)
+                    candies+=1;
+                down++;
+                up = 1;
                 
             }
         }
-
 
         return candies;
 
