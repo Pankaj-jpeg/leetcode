@@ -7,7 +7,7 @@
 // Time       : 
 // Space      : 
 // Runtime    : 0 ms  |  Memory: 97.3 MB
-// Date       : 2026-07-14
+// Date       : 2026-08-16
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Solution {
@@ -15,13 +15,12 @@ public:
     int maxProfit(vector<int>& prices) {
         int Max = 0;
         int Min = INT_MAX;
-        int profit;
 
-        for(int i = 0;i<prices.size();i++){
-            Min = min(Min,prices[i]);
-            profit = prices[i] - Min;
-            Max = max(Max,profit);
+        for(int it : prices){
+            Min = min(Min,it);
+            Max = max(Max,it-Min);
         }
+
         return Max;
     }
 };
